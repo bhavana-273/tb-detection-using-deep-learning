@@ -1,0 +1,174 @@
+# 🫁 TB Detection using Deep Learning
+
+## 📌 Overview
+
+This project detects **Tuberculosis (TB)** from chest X-ray images using a **Convolutional Neural Network (CNN)**.
+It provides an automated system to assist early diagnosis.
+
+---
+
+## 🚀 Features
+
+* Image preprocessing (grayscale, resize, normalization)
+* CNN-based classification (TB vs Normal)
+* Evaluation (accuracy, confusion matrix, ROC curve)
+* Grad-CAM visualization
+* Streamlit web app for prediction
+
+---
+
+## 📂 Dataset (Auto Download)
+
+This project uses the **TB Chest X-ray Dataset** from Kaggle.
+
+👉 The dataset is **automatically downloaded using `kagglehub`** — no manual download needed.
+
+### 🔹 Dataset Code (used in project)
+
+```python id="8n1k0k"
+import kagglehub
+
+path = kagglehub.dataset_download(
+    "tawsifurrahman/tuberculosis-tb-chest-xray-dataset"
+)
+
+print("Dataset path:", path)
+```
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone the repository
+
+```bash id="y0v0zj"
+git clone https://github.com/vaishnavi123-cOde/tb_detection.git
+cd tb_detection
+```
+
+---
+
+### 2. Install dependencies
+
+```bash id="b2j9wq"
+pip install -r requirements.txt
+```
+
+---
+
+### 3. Install KaggleHub (if not installed)
+
+```bash id="3l7v9x"
+pip install kagglehub
+```
+
+---
+
+## ▶️ Usage
+
+### 🔹 Step 1: Train the model (downloads dataset automatically)
+
+```bash id="7n4p4o"
+python train.py
+```
+
+✔ This will:
+
+* Download dataset (~600MB)
+* Preprocess images
+* Train CNN model
+* Save model in `models/`
+
+---
+
+### 🔹 Step 2: Evaluate model
+
+```bash id="k2u4yb"
+python evaluate.py
+```
+
+---
+
+### 🔹 Step 3: Predict using image
+
+```bash id="zv0gzt"
+python predict.py
+```
+
+---
+
+### 🔹 Step 4: Run Streamlit app
+
+```bash id="0m8qj1"
+streamlit run app.py
+```
+
+---
+
+## 📊 Results
+
+* Accuracy: ~97%
+* AUC Score: ~0.989
+* Improved TB detection using:
+
+  * Class weights
+  * Threshold tuning
+
+---
+
+## 🧠 Model Details
+
+* CNN (Conv2D, MaxPooling, Dense)
+* Input: 128 × 128 grayscale images
+* Loss: Binary Crossentropy
+* Optimizer: Adam
+
+---
+
+## ⚠️ Important Notes
+
+* Dataset is **not included in repo** (large size)
+* It is downloaded automatically using KaggleHub
+* Model file (`.keras`) is also excluded
+
+---
+
+## 🖥️ Application
+
+The Streamlit app allows:
+
+* Uploading X-ray images
+* Predicting TB or Normal
+* Displaying results instantly
+
+---
+
+## 🚀 Future Work
+
+* Use advanced models (ResNet, EfficientNet)
+* Deploy as web/mobile app
+* Improve dataset balance
+* Add clinical integration
+
+---
+
+## 🧑‍💻 Tech Stack
+
+* Python
+* TensorFlow / Keras
+* OpenCV
+* Scikit-learn
+* Streamlit
+* KaggleHub
+
+---
+
+## 📎 Author
+
+Vaishnavi Ganti
+
+---
+
+## ⭐ Support
+
+If you found this useful, consider giving a ⭐ on GitHub.
